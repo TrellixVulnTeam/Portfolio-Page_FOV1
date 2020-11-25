@@ -1,0 +1,172 @@
+:root {
+  --deep-blue: hsl(211, 47%, 17%);
+  --light-blue: hsl(211, 59%, 35%);
+  --golden: hsl(33, 46%, 58%);
+  --deep-blue-hover: hsla(211, 48%, 17%, 0.637);
+  --font-type: 'Inter', sans-serif; }
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 75%; }
+  @media only screen and (max-width: 85.3em) {
+    html {
+      font-size: 70%; } }
+
+body {
+  font-family: var(--font-type);
+  background-color: var(--golden); }
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--golden);
+  padding: 1rem; }
+  .header__main {
+    margin-right: 1rem; }
+    .header__main p {
+      font-size: 2rem; }
+  .header__projects, .header__contact {
+    font-size: 2rem;
+    margin-right: 1rem;
+    position: relative; }
+    .header__projects :after, .header__contact :after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 0;
+      top: 2.5rem;
+      left: 0;
+      background-color: var(--deep-blue);
+      visibility: hidden;
+      transition: all 0.3s ease-in-out; }
+    .header__projects a:link, .header__projects a:visited, .header__contact a:link, .header__contact a:visited {
+      color: var(--deep-blue);
+      text-decoration: none; }
+    .header__projects a:hover:after, .header__contact a:hover:after {
+      visibility: visible;
+      height: 3px; }
+
+.section__icons {
+  width: 1.5rem;
+  height: 1.5rem; }
+  @media only screen and (max-width: 55em) {
+    .section__icons {
+      width: 2rem;
+      height: 2rem; } }
+
+.section__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--golden); }
+  @media only screen and (max-width: 55em) {
+    .section__main {
+      flex-direction: column;
+      height: auto; } }
+  .section__main--image {
+    width: 100vw;
+    margin-left: 20rem;
+    align-self: center; }
+    @media only screen and (max-width: 55em) {
+      .section__main--image {
+        margin-left: 16rem;
+        align-self: center; } }
+    .section__main--image img {
+      width: 70%;
+      height: auto; }
+      @media only screen and (max-width: 55em) {
+        .section__main--image img {
+          height: 50%; } }
+  .section__main--socials {
+    margin-top: 1rem;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+  .section__main--description {
+    height: 30vh;
+    margin-right: 20rem;
+    font-size: 2rem; }
+    @media only screen and (max-width: 55em) {
+      .section__main--description {
+        margin: 2rem 10rem;
+        font-size: 2.5rem;
+        margin-bottom: 0; } }
+    @media only screen and (max-width: 60em) {
+      .section__main--description {
+        font-size: 1rem; } }
+    .section__main--description span {
+      font-size: 2.5rem;
+      font-weight: 500; }
+      @media only screen and (max-width: 55em) {
+        .section__main--description span {
+          font-size: 2rem; } }
+      @media only screen and (max-width: 60em) {
+        .section__main--description span {
+          font-size: 1rem; } }
+
+.section__projects h1 {
+  font-size: 2.5rem;
+  color: var(--deep-blue);
+  margin-top: 1.5rem;
+  margin-left: 1.5rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1.5rem;
+  justify-items: center;
+  margin-top: 2rem; }
+  @media only screen and (max-width: 35em) {
+    .grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; } }
+  @media only screen and (max-width: 60em) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr); } }
+
+.project {
+  border: 2px solid var(--deep-blue);
+  width: 23rem;
+  height: 16rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: .5rem; }
+  .project h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--deep-blue); }
+  .project a {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--light-blue);
+    text-decoration: none;
+    font-variant: small-caps;
+    transition: all .2s; }
+    .project a :hover {
+      color: var(--deep-blue-hover); }
+  .project p {
+    color: var(--deep-blue);
+    font-size: 1rem; }
+
+.blog p {
+  font-size: 2rem; }
+
+footer {
+  margin: 2rem 0;
+  text-align: center;
+  color: var(--deep-blue); }
+  footer a {
+    color: var(--deep-blue);
+    text-decoration: none; }

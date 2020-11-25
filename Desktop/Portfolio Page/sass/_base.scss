@@ -1,0 +1,57 @@
+:root{
+    //COLOURS
+    --deep-blue: hsl(211, 47%, 17%);
+    --light-blue: hsl(211, 59%, 35%);
+    --golden: hsl(33, 46%, 58%);
+    --deep-blue-hover: hsla(211, 48%, 17%, 0.637);
+
+    //TYPOGRAPHY
+    --font-type: 'Inter', sans-serif;
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 35em) { @content };
+    }
+
+    @if $breakpoint == tab-port{
+        @media only screen and (max-width: 55em) { @content };
+    }
+
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 60em) { @content }; //900px
+    }
+    
+    @if $breakpoint == small-screens {
+        @media only screen and (max-width: 85.3em) { @content }; //1024px
+    }
+}
+
+// $small-screens: 85.3em; //1024px
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 75%;
+
+    // @media only screen and (max-width: $small-screens){
+    //     font-size: 70%;
+    // }
+
+    @include respond(small-screens){
+        font-size: 70%;
+    }
+}
+
+body{
+    font-family: var(--font-type);
+    background-color: var(--golden);
+}
+
+
+
